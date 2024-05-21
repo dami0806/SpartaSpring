@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 public class BeanTest {
+
     @Autowired
     @Qualifier("pizza")
     Food food;
