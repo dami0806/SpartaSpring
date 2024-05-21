@@ -3,7 +3,7 @@ let host = 'http://' + window.location.host;
 $(document).ready(function () {
     const auth = getToken();
     if(auth === '') {
-        window.location.href = host + "/api/user/login-page";
+        window.location.href = host + "/api/user/login-page"; // 로그인 페이지로 리디렉션
     } else {
         $('#login-true').show();
         $('#login-false').hide();
