@@ -16,15 +16,15 @@ import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
-@Slf4j
+@Slf4j // log를 위한 롬북
 @Service
-public class RestTemplateService {
+public class RestTemplateService { // 서버로 요청을 보내고 응답을 받기
     private final RestTemplate restTemplate;
 
     public RestTemplateService(RestTemplateBuilder builder) {
         this.restTemplate = builder.build();
     }
-
+// 서버에 특정 아이템을 요청 : 입력: 아이템 이름 (query)
     public ItemDto getCallObject(String query) {
         // 요청 URL 만들기
         URI uri = UriComponentsBuilder
@@ -61,6 +61,7 @@ public class RestTemplateService {
         return fromJSONtoItems(responseEntity.getBody());
     }
 
+    // 서버에 요청을 보내고 응답을 받아옴
     public ItemDto postCall(String query) {
         // 요청 URL 만들기
         URI uri = UriComponentsBuilder
